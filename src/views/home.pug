@@ -6,6 +6,7 @@ html(lang="en")
     meta(name="viewport", content="width=device-width, initial-scale=1.0")
     title Noom
     link(rel="stylesheet", href="https://unpkg.com/mvp.css")
+    
   body
     header
       h1 Noom
@@ -21,10 +22,17 @@ html(lang="en")
             select#cameras
             button#mute Mute
             button#camera Turn Camera Off
-          video#my_face(autoplay, playsinline, width="600", height="400")
+          video#my_face(autoplay, playsinline, width="640", height="480") 
+          canvas#mygreen
+          canvas#mytrans
         div#streams
         h3 Result of the last photo
         div#photos
           canvas#photo
     script(src="/socket.io/socket.io.js")
     script(src="/public/js/app.js")
+    script(type="module" src="/public/js/remove.js")
+    script(type="module" src="/public/js/remove2.js")
+    script(src="https://cdn.jsdelivr.net/npm/@mediapipe/selfie_segmentation/selfie_segmentation.js" crossorigin="anonymous")
+    script(src="https://cdn.jsdelivr.net/npm/@mediapipe/camera_utils/camera_utils.js" crossorigin="anonymous")
+    script(src="https://mrdoob.github.io/stats.js/build/stats.min.js")

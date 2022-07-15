@@ -268,10 +268,17 @@ function paintPeerFace(stream, remote_socket_id) {
   video.srcObject = stream;
   video.autoplay = true;
   video.playsInline = true;
-  video.style.width = "600px";
-  video.style.height = "400px";
+  video.style.width = "640px";
+  video.style.height = "480px";
+  video.id = "remote";
+  const canvas1 = document.createElement("canvas");
+  canvas1.id = "remoteGreen";
+  const canvas2 = document.createElement("canvas");
+  canvas2.id = "remotetrans";
 
   div.appendChild(video);
+  div.appendChild(canvas1);
+  div.appendChild(canvas2);
   streams.appendChild(div);
 }
 

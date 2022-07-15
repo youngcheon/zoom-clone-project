@@ -4,10 +4,9 @@ import { instrument } from "@socket.io/admin-ui";
 import express from "express";
 
 const app = express();
-
 app.set("view engine", "pug");
 app.set("views", __dirname + "/views");
-app.use("/public", express.static(__dirname + "/public"));
+app.use("/public/js", express.static(__dirname + "/public/js"));
 app.get("/", (_, res) => res.render("home"));
 app.get("/*", (_, res) => res.redirect("/"));
 
