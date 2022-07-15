@@ -8,17 +8,8 @@ html(lang="en")
     //- link(rel="stylesheet" href="style.css")
     link(rel="stylesheet", href="https://unpkg.com/mvp.css")
     style.
-      #my_face {
-        display: none;
-      }
-      #mygreen {
-        display: none;
-      }
-      #remote {
-        display: none;
-      }
-      #remotegreen {
-        display: none;
+      .displaynone{
+        display:none;
       }
       .box {
         position: relative;
@@ -28,6 +19,9 @@ html(lang="en")
       }
       .remoteBox {
         position: absolute;
+      }
+      .mirror{
+        transform: scaleX(-1);
       }
   body
     header
@@ -45,16 +39,15 @@ html(lang="en")
             button#mute Mute
             button#camera Turn Camera Off
           div.box
-            video#my_face(autoplay, playsinline, width="640", height="480") 
-            canvas#mygreen
+            video#my_face(autoplay, playsinline, width="640", height="480").displaynone
+            canvas#mygreen.displaynone
             div.myBox
-              canvas#mytrans
+              canvas#mytrans.mirror
             div.remoteBox
-              canvas#remotetrans
+              canvas#remotetrans.mirror
         div#streams
-          video#remote(autoplay, playsinline, width="640", height="480") 
-          canvas#remotegreen
-        h3 Result of the last photo
+          video#remote(autoplay, playsinline, width="640", height="480").displaynone
+          canvas#remotegreen.displaynone
         div#photos
           canvas#photo
     script(src="/socket.io/socket.io.js")
