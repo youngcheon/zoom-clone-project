@@ -5,8 +5,30 @@ html(lang="en")
     meta(http-equiv="X-UA-Compatible", content="IE=edge")
     meta(name="viewport", content="width=device-width, initial-scale=1.0")
     title Noom
+    //- link(rel="stylesheet" href="style.css")
     link(rel="stylesheet", href="https://unpkg.com/mvp.css")
-    
+    style.
+      #my_face {
+        display: none;
+      }
+      #mygreen {
+        display: none;
+      }
+      #remote {
+        display: none;
+      }
+      #remotegreen {
+        display: none;
+      }
+      .box {
+        position: relative;
+      }
+      .myBox {
+        position: absolute;
+      }
+      .remoteBox {
+        position: absolute;
+      }
   body
     header
       h1 Noom
@@ -22,13 +44,16 @@ html(lang="en")
             select#cameras
             button#mute Mute
             button#camera Turn Camera Off
-          video#my_face(autoplay, playsinline, width="640", height="480") 
-          canvas#mygreen
-          canvas#mytrans
+          div.box
+            video#my_face(autoplay, playsinline, width="640", height="480") 
+            canvas#mygreen
+            div.myBox
+              canvas#mytrans
+            div.remoteBox
+              canvas#remotetrans
         div#streams
           video#remote(autoplay, playsinline, width="640", height="480") 
           canvas#remotegreen
-          canvas#remotetrans
         h3 Result of the last photo
         div#photos
           canvas#photo
