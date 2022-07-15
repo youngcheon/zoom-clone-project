@@ -2,6 +2,9 @@ const socket = io();
 
 const take_photo_btn = document.querySelector("#take_photo");
 const my_face = document.getElementById("my_face");
+const remote = document.getElementById("remote");
+const remoteGreen = document.getElementById("remotegreen");
+const remotetrans = document.getElementById("remotetrans");
 const mute_btn = document.getElementById("mute");
 const camera_btn = document.getElementById("camera");
 const cameras_select = document.getElementById("cameras");
@@ -259,27 +262,11 @@ function handleAddStream(data) {
 }
 
 function paintPeerFace(stream, remote_socket_id) {
-  const streams = document.querySelector("#streams");
-
-  const div = document.createElement("div");
-  div.id = remote_socket_id;
-
-  const video = document.createElement("video");
-  video.srcObject = stream;
-  video.autoplay = true;
-  video.playsInline = true;
-  video.style.width = "640px";
-  video.style.height = "480px";
-  video.id = "remote";
-  const canvas1 = document.createElement("canvas");
-  canvas1.id = "remoteGreen";
-  const canvas2 = document.createElement("canvas");
-  canvas2.id = "remotetrans";
-
-  div.appendChild(video);
-  div.appendChild(canvas1);
-  div.appendChild(canvas2);
-  streams.appendChild(div);
+  remote.srcObject = stream;
+  remote.autoplay = true;
+  remote.playsInline = true;
+  remote.style.width = "640px";
+  remote.style.height = "480px";
 }
 
 // video control

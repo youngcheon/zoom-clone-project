@@ -9,13 +9,6 @@ let videoWidth = 640;
 let videoHeight = 480;
 let segmentedCanvas;
 
-// async function getVideo() {
-//   document.querySelectorAll("video").forEach((element) => {
-//     element.height = videoHeight;
-//     element.width = videoWidth;
-//   });
-// }
-
 async function start() {
   // create a stream and send it to replace when its starts playing
   videoElement.onplaying = async () => {

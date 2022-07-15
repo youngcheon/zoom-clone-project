@@ -2,7 +2,7 @@ import { segment } from "./segment.mjs";
 import { addShader } from "./wegbl-transparency.mjs";
 
 const videoElement = document.querySelector("video#remote");
-const greenScreenCanvas = document.querySelector("canvas#remoteGreen");
+const greenScreenCanvas = document.querySelector("canvas#remotegreen");
 const webglCanvas = document.querySelector("canvas#remotetrans");
 const FRAME_RATE = 30;
 let videoWidth = 640;
